@@ -1,3 +1,3 @@
 [build]
-  publish = "static"
-  command = "python app.py"  # Replace with your main Flask app file
+  command = "python app.py"
+  publish = "static"  # Adjust the path to your static files if needed
