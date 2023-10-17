@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Santa Questionnaire</title>
+</head>
+<body>
+    <h1>Secret Santa Questionnaire</h1>
+    <form action="/questionnaire?step={{ step + 1 }}" method="POST">
+        <label for="answer">{{ question }}</label>
+        <input type="text" name="answer" required>
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>

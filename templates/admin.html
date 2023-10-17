@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+</head>
+<body>
+    <h2>User Data</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        {% for username, password in users.items() %}
+        <tr>
+            <td>{{ username }}</td>
+            <td>{{ password }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
