@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>Christmas Table</h1>
+    <button id="toggle-language-button">Merel cheat code</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cor Favorita</th>
+                <th>Tamanho de Sapato</th>
+                <th>Tamanho de Calças</th>
+                <th>Tamanho de Blusa</th>
+                <th>Hobbies</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for answer in answers %}
+            <tr>
+                <td>{{ answer.username }}</td>
+                <td>{{ answer.favorite_color }}</td>
+                <td>{{ answer.shoe_size }}</td>
+                <td>{{ answer.pants_size }}</td>
+                <td>{{ answer.blouse_size }}</td>
+                <td>{{ answer.hobbies }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('home') }}" class="back-button">Home</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- questionnaire.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1 class="translate" data-language="pt">🎅 Secret Santa Questionnaire 🎁</h1>
+    <h1 class="translate" data-language="en" style="display: none">🎅 Secret Santa Questionnaire 🎁</h1>
+
+    <button id="translate-button">Merel cheat code</button>
+
+    <form id="questionForm" method="POST" action="{{ url_for('store_answer') }}">
+        <label for="username" class="translate" data-language="pt">Nome:</label>
+        <label for="username" class="translate" data-language="en" style="display: none">Name:</label>
+        <input type="text" name="username" required><br>
+
+        <label for="favorite_color" class="translate" data-language="pt">Cor Favorita:</label>
+        <label for="favorite_color" class="translate" data-language="en" style="display: none">Favorite Color:</label>
+        <input type="text" name="favorite_color" required><br>
+
+        <label for="shoe_size" class="translate" data-language="pt">Tamanho de Sapato:</label>
+        <label for="shoe_size" class="translate" data-language="en" style="display: none">Shoe Size:</label>
+        <input type="text" name="shoe_size" required><br>
+
+        <label for="pants_size" class="translate" data-language="pt">Tamanho de Calças:</label>
+        <label for="pants_size" class="translate" data-language="en" style="display: none">Pants Size:</label>
+        <input type="text" name="pants_size" required><br>
+
+        <label for="blouse_size" class="translate" data-language="pt">Tamanho de Blusa:</label>
+        <label for="blouse_size" class="translate" data-language="en" style="display: none">Blouse Size:</label>
+        <input type="text" name="blouse_size" required><br>
+
+        <label for="hobbies" class="translate" data-language="pt">Hobbies:</label>
+        <label for="hobbies" class="translate" data-language="en" style="display: none">Hobbies:</label>
+        <input type="text" name="hobbies" required><br>
+
+        <button type="submit" class="translate" data-language="pt">Enviar</button>
+        <button type="submit" class="translate" data-language="en" style="display: none">Submit</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
