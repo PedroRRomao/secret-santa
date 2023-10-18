@@ -1,3 +1,0 @@
-[build]
-  command = "python app.py"
-  publish = "static"  # Adjust the path to your static files if needed
