@@ -1,13 +1,13 @@
-# app.py (Flask Application)
+# application.py (Flask Application)
 
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 # Configure your database URI based on the database you're using (PostgreSQL)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:70908654@santadb.cei9i2nvyxfj.eu-west-1.rds.amazonaws.com:5432/santadb'
-db = SQLAlchemy(app)
+application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:70908654@santadb.cei9i2nvyxfj.eu-west-1.rds.amazonaws.com:5432/santadb'
+db = SQLAlchemy(application)
 
 # Define the Questionnaire model
 class Questionnaire(db.Model):
@@ -23,15 +23,15 @@ class Questionnaire(db.Model):
 # Implement your Flask routes for data retrieval and storage.
 # Define routes to retrieve and store questionnaire answers in the database.
 
-@app.route('/')
+@application.route('/')
 def home():
     return render_template('home.html')
 
-@app.route('/questionnaire')
+@application.route('/questionnaire')
 def questionnaire():
     return render_template('questionnaire.html')
 
-@app.route('/answers')
+@application.route('/answers')
 def answers():
     # Retrieve answers from the database
     answers = Questionnaire.query.all()
@@ -51,7 +51,7 @@ def answers():
     return render_template('answers.html', answers=answers_list)
 
 
-@app.route('/store_answer', methods=['POST'])
+@application.route('/store_answer', methods=['POST'])
 def store_answer():
     if request.method == 'POST':
         data = request.form
@@ -69,6 +69,6 @@ def store_answer():
         return redirect(url_for('answers'))
 
 if __name__ == '__main__':
-    with app.app_context():
+    with application.app_context():
         db.create_all()
-    app.run(debug=True)
+    application.run(debug=True)
