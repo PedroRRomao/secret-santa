@@ -76,3 +76,4 @@ def create_app():
         db.create_all()
     
     return application
+    #application.run(debug=True)
