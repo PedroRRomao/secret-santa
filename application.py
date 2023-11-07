@@ -43,6 +43,7 @@ def create_app():
         answers_list = []
         for answer in answers:
             answers_list.append({
+                "id": answer.id,  # Include the id attribute
                 "username": answer.username,
                 "favorite_color": answer.favorite_color,
                 "shoe_size": answer.shoe_size,
@@ -59,11 +60,11 @@ def create_app():
         if request.method == 'POST':
             data = request.form
             username = data['username']
-            favorite_color = data['favorite_color']
-            shoe_size = data['shoe_size']
-            pants_size = data['pants_size']
-            blouse_size = data['blouse_size']
-            hobbies = data['hobbies']
+            favorite_color = data.get('favorite_color', '') 
+            shoe_size = data.get('shoe_size', '') 
+            pants_size = data.get('pants_size', '') 
+            blouse_size = data.get('blouse_size', '') 
+            hobbies = data.get('hobbies', '') 
 
             # Check if a user with the same username already exists in the database
             existing_user = Questionnaire.query.filter_by(username=username).first()
@@ -83,6 +84,19 @@ def create_app():
             db.session.commit()
             return redirect(url_for('answers'))
         
+    
+    @application.route('/delete_answer/<int:id>', methods=['POST'])
+    def delete_answer(id):
+        # Find the answer with the specified id
+        answer = Questionnaire.query.get(id)
+
+        if answer:
+            # Delete the answer from the database
+            db.session.delete(answer)
+            db.session.commit()
+        
+        return redirect(url_for('answers'))
+
 
     with application.app_context():
         db.create_all()

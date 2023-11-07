@@ -209,28 +209,22 @@
 
     <form id="questionForm" method="POST" action="{{ url_for('store_answer') }}">
         <label for="username" class="translate" data-language="pt">Nome:</label>
-
         <input type="text" name="username" required><br>
-
+        
         <label for="favorite_color" class="translate" data-language="pt">Cor Favorita:</label>
-
-        <input type="text" name="favorite_color" required><br>
-
-        <label for="shoe_size" class="translate" data-language="pt">Tamanho de Sapato:</label>
-
-        <input type="text" name="shoe_size" required><br>
-
+        <input type="text" name="favorite_color"><br> <!-- Removed 'required' attribute -->
+        
+        <label for="shoe_size" class "translate" data-language="pt">Tamanho de Sapato:</label>
+        <input type="text" name="shoe_size"><br> <!-- Removed 'required' attribute -->
+        
         <label for="pants_size" class="translate" data-language="pt">Tamanho de Calças:</label>
-
-        <input type="text" name="pants_size" required><br>
-
+        <input type="text" name="pants_size"><br> <!-- Removed 'required' attribute -->
+        
         <label for="blouse_size" class="translate" data-language="pt">Tamanho de Blusa:</label>
-
-        <input type="text" name="blouse_size" required><br>
-
+        <input type="text" name="blouse_size"><br> <!-- Removed 'required' attribute -->
+        
         <label for="hobbies" class="translate" data-language="pt">Hobbies:</label>
-
-        <input type="text" name="hobbies" required><br>
+        <input type="text" name="hobbies"><br> <!-- Removed 'required' attribute -->
 
         <button type="submit" class="translate" data-language="pt">Enviar</button>
     </form>

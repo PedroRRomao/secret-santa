@@ -227,6 +227,11 @@
                     <td>{{ answer.pants_size }}</td>
                     <td>{{ answer.blouse_size }}</td>
                     <td>{{ answer.hobbies }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('delete_answer', id=answer.id) }}">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
