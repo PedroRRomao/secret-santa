@@ -68,7 +68,8 @@ def store_answer():
         db.session.commit()
         return redirect(url_for('answers'))
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
+def create_app():
     with application.app_context():
         db.create_all()
     application.run(debug=True)
