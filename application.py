@@ -101,5 +101,5 @@ def create_app():
     with application.app_context():
         db.create_all()
     
-    return application
-    #application.run(debug=True)
+    #return application
+    application.run(debug=True)
