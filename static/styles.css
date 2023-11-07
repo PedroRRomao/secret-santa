@@ -2717,3 +2717,15 @@ tbody tr:nth-child(odd) {
     width: 140px;
     filter: drop-shadow(0 0 20px rgb(1, 1, 42, 0.2));
   }
+
+  /* Media query for phones */
+@media (max-width: 600px) {
+  body {
+      font-size: 16px; /* Adjust font size for readability */
+  }
+
+  .snow {
+      width: 5px; /* Reduce snowflake size on smaller screens */
+      height: 5px;
+  }
+}
