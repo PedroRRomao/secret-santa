@@ -2617,8 +2617,8 @@ body {
 
 h1 {
     color: #f8f8f8; /* Red title color */
-    font-size: 24px;
     margin: 20px 0;
+    font-size: 40px;
 }
 
 a, button {
@@ -2706,3 +2706,14 @@ tbody tr:nth-child(odd) {
     left: 50%;
     transform: translate(-50%, -50%);
   }  
+
+  #santa_cursor {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    transition: 0.2s ease-out;
+  }
+  #santa_cursor img {
+    width: 140px;
+    filter: drop-shadow(0 0 20px rgb(1, 1, 42, 0.2));
+  }

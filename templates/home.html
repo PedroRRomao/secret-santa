@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="static/countdown.css">
 </head>
 <body>
+    <div id="santa_cursor">
+        <img src="static/santa-img.png" />
+      </div>
     <div class="snow"></div>
     <div class="snow"></div>
     <div class="snow"></div>
@@ -212,5 +217,9 @@
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <h1 id="count_letter">Countdown to Christmas</h1>
+    <div id="countdown"></div>
+    <script src="static/countdown.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+
+#countdown {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+#countdown {
+    /* Styling for Christmas theme */
+    color: #c62828; /* Red color for numbers */
+    font-weight: bold;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px #fff; /* Add a subtle text shadow */
+}
+
+#count_letter {
+    font-size: 40px;
+    text-align: center;
+}
