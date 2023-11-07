@@ -65,9 +65,21 @@ def create_app():
             blouse_size = data['blouse_size']
             hobbies = data['hobbies']
 
-            # Store the answers in the database
-            questionnaire = Questionnaire(username=username, favorite_color=favorite_color, shoe_size=shoe_size, pants_size=pants_size, blouse_size=blouse_size, hobbies=hobbies)
-            db.session.add(questionnaire)
+            # Check if a user with the same username already exists in the database
+            existing_user = Questionnaire.query.filter_by(username=username).first()
+
+            if existing_user:
+                # If the user already exists, update their answers
+                existing_user.favorite_color = favorite_color
+                existing_user.shoe_size = shoe_size
+                existing_user.pants_size = pants_size
+                existing_user.blouse_size = blouse_size
+                existing_user.hobbies = hobbies
+            else:
+                # If the user doesn't exist, create a new entry
+                questionnaire = Questionnaire(username=username, favorite_color=favorite_color, shoe_size=shoe_size, pants_size=pants_size, blouse_size=blouse_size, hobbies=hobbies)
+                db.session.add(questionnaire)
+
             db.session.commit()
             return redirect(url_for('answers'))
         
