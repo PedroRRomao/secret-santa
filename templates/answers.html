@@ -215,7 +215,7 @@
                     <th>Tamanho de Sapato</th>
                     <th>Tamanho de Calças</th>
                     <th>Tamanho de Blusa</th>
-                    <th>Hobbies</th>
+                    <th>Hobbies/Interesses</th>
                 </tr>
             </thead>
             <tbody>
@@ -227,11 +227,11 @@
                     <td>{{ answer.pants_size }}</td>
                     <td>{{ answer.blouse_size }}</td>
                     <td>{{ answer.hobbies }}</td>
-                    <td>
+                    <!-- <td>
                         <form method="POST" action="{{ url_for('delete_answer', id=answer.id) }}">
                             <button type="submit">Delete</button>
                         </form>
-                    </td>
+                    </td> -->
                 </tr>
                 {% endfor %}
             </tbody>
